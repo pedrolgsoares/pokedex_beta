@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedexbeta/src/views/poke_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   _pageAcess() {
     return Container(
-      padding: EdgeInsets.all(25),
+      padding: const EdgeInsets.all(25),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -35,7 +36,12 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black,
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const PokeList()),
+              );
+            },
           )
         ],
       ),
