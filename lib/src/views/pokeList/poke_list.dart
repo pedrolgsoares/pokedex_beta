@@ -59,11 +59,11 @@ class _PokeListState extends State<PokeList> {
               children: [
                 Image.network(pokemon.img!),
                 Text(pokemon.name!,
-                    style: const TextStyle(color: Colors.white)),
+                    style: const TextStyle(color: Colors.white, fontSize: 20)),
                 Text(pokemon.height!,
-                    style: const TextStyle(color: Colors.white)),
+                    style: const TextStyle(color: Colors.white, fontSize: 18)),
                 Text(pokemon.weight!,
-                    style: const TextStyle(color: Colors.white))
+                    style: const TextStyle(color: Colors.white, fontSize: 18))
               ],
             ),
           );
