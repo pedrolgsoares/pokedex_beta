@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedexbeta/src/views/poke_list.dart';
+import 'package:pokedexbeta/src/views/pokeList/poke_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,7 +39,10 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const PokeList()),
+                MaterialPageRoute(
+                    builder: (context) => const PokeList(
+                          list: [],
+                        )),
               );
             },
           )
