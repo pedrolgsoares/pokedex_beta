@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedexbeta/src/controllers/poke_controller.dart';
 import 'package:pokedexbeta/src/views/detailsPage/details_page.dart';
@@ -60,16 +61,18 @@ class _PokeListState extends State<PokeList> {
                   context,
                   MaterialPageRoute(builder: (context) => const DetailsPage()),
                 );
-                print(
-                    "Entrou na tela de detalhes do pokémon: " + pokemon.name!);
+                if (kDebugMode) {
+                  print("Entrou na tela de detalhes do pokémon: " +
+                      pokemon.name!);
+                }
               },
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("#" + pokemon.num!,
                       style: const TextStyle(fontSize: 18)),
                   Image.network(pokemon.img!),
-                  Text(pokemon.name!, style: const TextStyle(fontSize: 18)),
+                  Text(pokemon.name!, style: const TextStyle(fontSize: 16)),
                 ],
               ),
             ),
