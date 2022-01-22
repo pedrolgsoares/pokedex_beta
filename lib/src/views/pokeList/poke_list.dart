@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedexbeta/src/controllers/poke_controller.dart';
+import 'package:pokedexbeta/src/views/detailsPage/details_page.dart';
 
 class PokeList extends StatefulWidget {
   const PokeList({Key? key}) : super(key: key);
@@ -42,29 +43,35 @@ class _PokeListState extends State<PokeList> {
   _sucess() {
     return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisSpacing: 20,
+            mainAxisSpacing: 10,
             crossAxisCount: 3,
-            crossAxisSpacing: 20,
-            childAspectRatio: 1 / 2),
+            crossAxisSpacing: 5,
+            childAspectRatio: 2 / 3),
         itemCount: controller.pokemons.length,
         itemBuilder: (BuildContext ctx, index) {
           var pokemon = controller.pokemons[index];
-
           return Container(
             margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-                color: Colors.red, borderRadius: BorderRadius.circular(10)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.network(pokemon.img!),
-                Text(pokemon.name!,
-                    style: const TextStyle(color: Colors.white, fontSize: 20)),
-                Text(pokemon.height!,
-                    style: const TextStyle(color: Colors.white, fontSize: 18)),
-                Text(pokemon.weight!,
-                    style: const TextStyle(color: Colors.white, fontSize: 18))
-              ],
+                color: Colors.white, borderRadius: BorderRadius.circular(15)),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DetailsPage()),
+                );
+                print(
+                    "Entrou na tela de detalhes do pokémon: " + pokemon.name!);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("#" + pokemon.num!,
+                      style: const TextStyle(fontSize: 18)),
+                  Image.network(pokemon.img!),
+                  Text(pokemon.name!, style: const TextStyle(fontSize: 18)),
+                ],
+              ),
             ),
           );
         });

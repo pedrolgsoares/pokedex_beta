@@ -12,7 +12,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Pokédex versão beta")),
+      appBar:
+          AppBar(title: const Text("Pokédex versão beta"), centerTitle: true),
       body: _pageAcess(),
     );
   }
@@ -24,10 +25,9 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset("assets/images/title.png"),
-          Image.asset("assets/images/icon.png"),
           TextButton(
             style: TextButton.styleFrom(
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.blue,
                 elevation: 15,
                 shadowColor: Colors.black),
             child: const Text(
