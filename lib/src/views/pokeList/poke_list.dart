@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedexbeta/src/controllers/poke_controller.dart';
 import 'package:pokedexbeta/src/views/detailsPage/details_page.dart';
@@ -54,8 +53,7 @@ class _PokeListState extends State<PokeList> {
           return Container(
             margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-                color: Colors.blue[300],
-                borderRadius: BorderRadius.circular(15)),
+                color: Colors.white, borderRadius: BorderRadius.circular(15)),
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -63,18 +61,13 @@ class _PokeListState extends State<PokeList> {
                     MaterialPageRoute(
                         builder: (context) =>
                             DetailsPage(controller.pokemons[index])));
-                if (kDebugMode) {
-                  print("Entrou na tela de detalhes do pokémon: " +
-                      pokemon.name!);
-                }
               },
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text("#" + pokemon.num!,
+                  Text("Nº ${pokemon.num}",
                       style: const TextStyle(fontSize: 18)),
                   Image.network(pokemon.img!),
-                  Text(pokemon.name!, style: const TextStyle(fontSize: 16)),
                 ],
               ),
             ),

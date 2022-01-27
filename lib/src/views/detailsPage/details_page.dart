@@ -15,20 +15,21 @@ class DetailsPage extends StatelessWidget {
   }
 
   _details() {
-    return Card(
+    return Container(
+      color: Colors.white,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            "#${pokemon.num} ${pokemon.name}",
-            style: const TextStyle(fontSize: 35),
+            "Nº ${pokemon.num} ${pokemon.name}",
+            style: const TextStyle(fontSize: 25.0),
           ),
           Align(
             child: Hero(
                 tag: pokemon.img!,
                 child: Container(
-                    height: 200.0,
-                    width: 200.0,
+                    height: 300.0,
+                    width: 300.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
@@ -36,26 +37,31 @@ class DetailsPage extends StatelessWidget {
                       ),
                     ))),
           ),
+          Text("Altura:  ${pokemon.height}",
+              style: const TextStyle(fontSize: 30)),
+          Text("Peso: ${pokemon.weight}", style: const TextStyle(fontSize: 30)),
+          const Text(
+            "Pokémon do tipo:",
+            style: TextStyle(fontSize: 30.0),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: pokemon.type!
                 .map((type) => FilterChip(
                     backgroundColor: Colors.blue[400],
-                    label: Text(
-                      "Pokémon do tipo: $type",
-                    ),
+                    label: Text(type),
                     onSelected: (selected) {}))
                 .toList(),
           ),
           const Text(
-            "Fraco contra pokémons do tipo: ",
-            style: TextStyle(fontSize: 25.0),
+            "Fraco contra: ",
+            style: TextStyle(fontSize: 30.0),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: pokemon.weaknesses!
                 .map((weak) => FilterChip(
-                    backgroundColor: Colors.blue[400],
+                    backgroundColor: Colors.yellow[400],
                     label: Text(weak),
                     onSelected: (selected) {}))
                 .toList(),
