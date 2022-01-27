@@ -54,13 +54,15 @@ class _PokeListState extends State<PokeList> {
           return Container(
             margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                color: Colors.blue[300],
+                borderRadius: BorderRadius.circular(15)),
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const DetailsPage()),
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsPage(controller.pokemons[index])));
                 if (kDebugMode) {
                   print("Entrou na tela de detalhes do pokémon: " +
                       pokemon.name!);
