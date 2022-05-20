@@ -27,5 +27,4 @@ Pokédex criada para estudos de consumo de API com Dio.
 <img src="https://user-images.githubusercontent.com/65426690/151640063-8e0ca59a-0c01-4bd0-94a3-e18d43972826.jpeg" width="200">
 
 ## 🚧 Status do projeto: 🚧 100% 🥇
-OBS: 👷‍♂️ PODERÁ SER REALIZADO NOVAS ATUALIZAÇÕES
 
