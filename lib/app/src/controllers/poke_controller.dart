@@ -1,6 +1,6 @@
-import 'package:flutter/widgets.dart';
-import 'package:pokedexbeta/src/models/pokemon.dart';
-import 'package:pokedexbeta/src/repositories/poke_repository.dart';
+import 'package:flutter/material.dart';
+import 'package:pokedexbeta/app/src/models/pokemon.dart';
+import 'package:pokedexbeta/app/src/repositories/poke_repository.dart';
 
 class PokeController {
   List<Pokemon> pokemons = [];

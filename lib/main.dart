@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokedexbeta/src/views/homePage/home_page.dart';
+import 'package:pokedexbeta/app/src/views/homePage/home_page.dart';
+import 'package:pokedexbeta/app/utils/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Pokédex versão beta',
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: AppConfigUI.themeData,
         home: const HomePage());
   }
 }

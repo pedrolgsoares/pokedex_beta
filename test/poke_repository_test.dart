@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pokedexbeta/src/repositories/poke_repository.dart';
-
+import 'package:pokedexbeta/app/src/repositories/poke_repository.dart';
 main() {
   final repository = PokeRepository();
 

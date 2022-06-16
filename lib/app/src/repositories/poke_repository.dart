@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:pokedexbeta/src/models/pokemon.dart';
+import 'package:pokedexbeta/app/src/models/pokemon.dart';
 
 class PokeRepository {
   final dio = Dio();

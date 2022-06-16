@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokedexbeta/src/controllers/poke_controller.dart';
-import 'package:pokedexbeta/src/views/detailsPage/details_page.dart';
+import 'package:pokedexbeta/app/src/controllers/poke_controller.dart';
+import 'package:pokedexbeta/app/src/views/detailsPage/details_page.dart';
 
 class PokeList extends StatefulWidget {
   const PokeList({Key? key}) : super(key: key);
@@ -77,7 +77,9 @@ class _PokeListState extends State<PokeList> {
 
   _loading() {
     return const Center(
-      child: CircularProgressIndicator(),
+      child: CircularProgressIndicator(
+        strokeWidth: 10,
+      ),
     );
   }
 
